@@ -1,0 +1,26 @@
+@model List<Actor>
+
+   <table class="table">
+        <tr>
+            <th>Id</th>  
+            <th>Name</th> 
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var actor in Model)
+        {
+            <tr>
+                <td>@actor.Id</td>
+                <td>@actor.Name</td>
+                <td>
+                    <a asp-controller="Actor" asp-action="Edit" asp-route-id="@actor.Id">Изминеть</a>
+                </td>
+                <td>
+                    <a asp-controller="Actor" asp-action="Delete" asp-route-id="@actor.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+        
+   </table> 
+
+   <a asp-controller="Actor" asp-action="Create"><button class="btn btn-success">Create Actor</button></a>

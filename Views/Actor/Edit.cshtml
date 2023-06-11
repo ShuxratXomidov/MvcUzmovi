@@ -1,0 +1,18 @@
+@model Actor
+
+@{
+    ViewData["Title"]="Edite actor";
+}
+
+
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="Actor" asp-action="Update" asp-route-id="@Model.Id" method="post">
+            <div class="mb-3">
+                <label for="Name">Aktyor ismi:</label>
+                <input type="text" name="Name" class="form-control" value="@Model.Name">
+            </div>
+            <button type="submit" class="btn btn-success">добавить</button>
+        </form>
+    </div>
+</div>

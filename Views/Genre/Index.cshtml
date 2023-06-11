@@ -1,0 +1,27 @@
+@model List<Genre>
+
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var film in Model)
+            {
+                
+                <tr>
+                     <td>@film.Id</td>
+                     <td>@film.Name</td>
+                     <td><a asp-controller="Genre" asp-action="Edit" asp-route-id="@film.Id">Изменить</a>
+                     </td>
+                     <td><a asp-controller="Genre" asp-action="Delete" asp-route-id="@film.Id">Удалить</a>
+                     </td>
+                </tr>
+                
+            }
+
+    </table> 
+    
+    <a asp-controller="Genre" asp-action="Create"><button class="btn btn-success">Create Film</button></a>
+    

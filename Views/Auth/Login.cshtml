@@ -1,0 +1,28 @@
+@model User;      // savol
+
+@{
+    Layout="Login_Layout";
+}
+
+<div class="card-body p-5 text-center">
+    <div class="card bg-dark text-white" style="border-radius: 2rem;">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-4">
+            <form asp-controller="Auth" asp-action="SendLogin" method="post">
+                <div class="mb-3 row">
+                <h2>Login</h2>
+                </div>
+                <div class="mb-3 row">
+                <input type="email" class="form-control" name="Email" placeholder="Enter your email"/>
+                <label for="Email">Email (pochta)</label>
+                </div>
+                <div class="mb-3 row">
+                <input type="number" class="form-control" name="Password" placeholder="Enter your password"/>
+                <label for="Password">Password (parol)</label>
+                </div>
+                <div>
+                <button class="btn btn-success">Login</button>
+                </div>
+            </form> 
+    </div>    
+</div>       
